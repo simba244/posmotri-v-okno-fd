@@ -8,7 +8,11 @@ html {
   block-size: 100%;
 }
 
+
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +20,85 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+}
+
+.content {
+  display: grid;
+  max-width: 1140px;
+  justify-content: start;
+  align-items: flex-end;
+  grid-template-columns: auto auto; /* Две колонки*/
+  gap: 0 30px; /* Зазор между элементами сетки */
+  grid-template-areas:
+    "result-grid search-grid"
+}
+
+.result {
+  grid-area: result-grid;
+}
+
+.content__details {
+  grid-area: search-grid;
+}
+
+.search-form {
+  display: flex;
+  min-height: 54px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__list-container {
+  display: flex;
+  max-height: 534px;
+  max-width: 400px;
+  flex-direction: column;
+  overflow: auto;
+  gap: 0 20px;
+}
+
+.content__details {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+/* Задайте размеры контейнеру .result__video-container и добавьте отступ снизу */
+.result__video-container { 
+  display: flex;
+  height: 386px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  object-fit: contain;
+  object-position: center;
+
+}
+
+/* сама карточка */
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+/* Заголовок и подпись к карточке */
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Задаю размеры картинке карточек */
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 h1,
