@@ -138,9 +138,10 @@ html {
 .content__card-link {
   text-decoration: none;
   color: #ffffff;
+
 }
 
-/* Оформите текст*/
+/*Текст заголовков мини-карточек*/
 .content__video-card-title {
   font-family: "Fira Sans Condensed", sans-serif; 
   font-weight: 700; 
@@ -156,7 +157,7 @@ html {
   font-family:"Fira Sans Condensed", sans-serif; 
   font-weight: 400;
   font-size: 18px;
-  line-height: 16.2px; /* line-height: 3.5 */
+  line-height: 16.2px; /*подумать над дробями например line-height: 3.5 */
   line-clamp: 1;
 }
 
@@ -169,6 +170,64 @@ html {
   clip-path: inset(50%);
   white-space: nowrap;
 } 
+
+.search-form__fieldset {
+  border-color: transparent;
+
+}
+
+/*не забыть настроить*/
+.button {
+display: flex;
+font-family:"Fira Sans Condensed", sans-serif; 
+justify-content: center;
+padding: 6px 0 6px 0;
+min-width: 194px;
+outline: none;
+color: #fff;
+background-color: transparent;
+border: 1px solid rgb(255, 255, 255);
+font-weight: 700;
+font-size: 18px;
+}
+
+.search-form__textfield {
+  width: 225px;
+  height: 27px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif; 
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.7;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.7)
+}
+
+.search-form__textfield:active {
+border-right-color: #fff;
+border-left-color: #fff;
+}
+
+.search-form__textfield:focus {
+outline: none;
+}
+
+.search-form__label:has(:not(:active):focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
 
 h1,
 h2,
