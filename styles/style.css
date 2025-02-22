@@ -236,11 +236,13 @@ border: 1px solid #fff;
   outline: none;
 }
 
+
 /*Фича от куратора для фокуса*/
 .search-form__label:has(:not(:active):focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
+
 
 
 
@@ -299,10 +301,11 @@ border: 1px solid #fff;
   outline: none;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover:has(.search-form__checkbox)  {
   cursor: pointer;
   text-decoration: underline;
 }
+
 
 /* Пока не пойму зачем, может и лишнее
 .search-form__checkbox {
