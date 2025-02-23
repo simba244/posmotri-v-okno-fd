@@ -59,6 +59,7 @@ html {
 
 .content__list-container {
   display: flex;
+  position: relative;
   max-height: 298px;
   min-width: 400px;
   flex-direction: column;
@@ -71,6 +72,7 @@ html {
 /*Контейнер с большим видео */
 .result__video-container { 
   display: flex;
+  position: relative;
   height: 386px;
   min-width: 711px;
   object-fit: auto;
@@ -90,6 +92,39 @@ html {
   flex-direction: row;
   margin-bottom: 30px;
 }
+
+.content__card-link_current {
+  display: block;
+  background-color: #545050;
+}
+
+/* падинги для фокуса */
+.content__list-item {
+  padding: 0 3px 0 3px;
+}
+
+/* Наведение*/
+.content__list-item:hover .content__video-card-description {
+  text-decoration: underline;
+}
+
+/* Активная карточка */
+.content__list-item:active {
+  background-color: #545050; /* Цвет активной кнопки согласно макету */
+  color: #fff;
+}
+
+/* Сброс фокуса карточки */
+.content__list-item:focus {
+  outline: none;
+}
+
+/* Карточка в фокусе */
+.content__list-item:focus-visible {
+  outline: 1px solid #fff; 
+  outline-offset: 1px; 
+}
+
 
 /* Заголовок и подпись к карточки*/
 .content__video-card-description-container {
@@ -296,34 +331,32 @@ html {
 
 /*Кнопка*/
 .button {
-  display: flex;
-  justify-content: center;
-  padding: 5px 0 5px 0;
-  min-width: 194px;
+  text-align: center;
   font-family:"Fira Sans Condensed", sans-serif; 
   font-weight: 700;
   font-size: 18px;
   color: #fff;
   background-color: transparent;
   border: 1px solid #fff;
+  cursor: pointer;
   }
 
 /* Незнаю зачем из настраивать 
 и так все работает */  
 .search-form__submit-button {
-
+  padding: 5px 0 5px 0;
+  min-width: 194px;
 }
 
 /* Но разве что фокус некорректно отрабатывает, но в задании сказано
  растяните на всю ширину и как быть? */
 .more-button {
-
+  padding: 5px 0 5px 0;
 }
 
 
 /* Наведение мыши */
 .button:hover {
-  cursor: pointer;
   text-decoration: underline;
 }
 
