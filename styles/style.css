@@ -1,3 +1,25 @@
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+
 *,
 *::before,
 *::after {
@@ -97,24 +119,25 @@ html {
   padding: 0 3px 0 3px;
 }
 
-/* Наведение*/
-.content__list-item:hover .content__video-card-description {
-  text-decoration: underline;
+/* Поправил "так как интерактивный элемент - ссылка, то cтили на состояние нужно задать ей (класс .content__card-link)
+согласно макету, при наведени идолжен подчеркиваться также заголовок карточки"*/
+.content__card-link:hover {
+  text-decoration: underline solid #ffffff 1px;
 }
 
 /* Активная карточка */
-.content__list-item:active {
+.content__card-link:active {
   background-color: #545050; /* Цвет активной кнопки согласно макету */
   color: #fff;
 }
 
 /* Сброс фокуса карточки */
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
 
 /* Карточка в фокусе */
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -167,9 +190,11 @@ html {
   color: #ffffff;
 }
 
-/*Текст заголовков мини-карточек*/
+/*Текст заголовков мини-карточек
+Поправил"согласно макету, здесь используется шрифт Oswald"
+*/
 .content__video-card-title {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
@@ -179,7 +204,9 @@ html {
   text-overflow: ellipsis;
 }
 
-/*Подзаголовки мини-карточек*/
+/*Подзаголовки мини-карточек
+Исправил. "свойство не работает. Данное свойство применяется с префиксом  -webkit-line-clamp"
+*/
 .content__video-card-description {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
@@ -187,7 +214,7 @@ html {
   line-height: 16.2px;
   white-space: nowrap;
   overflow: hidden;
-  line-clamp: 3;
+  -webkit-line-clamp: 3;
 }
 
 /*Прячем старые чекбоксы*/
@@ -269,12 +296,14 @@ html {
   gap: 0 5px;
 }
 
-/*Подпись для чекбокса*/
+/*Подпись для чекбокса
+Исправил: "некорректно задано значение, свойство не применяется. letter-spacing не работает с процентами"
+*/
 .search-form__label-text {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 /*Стилизую чекбокс*/
@@ -311,7 +340,9 @@ html {
   text-decoration: underline;
 }
 
-/*Кнопка*/
+/*Кнопка
+Исправил: так как паддинги одинаковые для обеих кнопок, их нужно перенести в общий класс button
+*/
 .button {
   text-align: center;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -321,19 +352,19 @@ html {
   background-color: transparent;
   border: 1px solid #fff;
   cursor: pointer;
+  padding: 5px 0 5px 0;
 }
 
 /* Незнаю зачем из настраивать 
 и так все работает */
 .search-form__submit-button {
-  padding: 5px 0 5px 0;
   min-width: 194px;
 }
 
 /* Но разве что фокус некорректно отрабатывает, но в задании сказано
  растяните на всю ширину и как быть? */
 .more-button {
-  padding: 5px 0 5px 0;
+  
 }
 
 /* Наведение мыши */
@@ -358,25 +389,6 @@ html {
   outline-offset: 1px;
 }
 
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-}
 
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
