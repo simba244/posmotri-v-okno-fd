@@ -225,9 +225,6 @@ html {
   font-size: 18px;
   line-height: 16.2px;
   white-space: nowrap;
-  overflow: hidden;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
 }
 
 /*Прячем старые чекбоксы*/
